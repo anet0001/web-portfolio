@@ -1,0 +1,17 @@
+.theme-switcher {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  background-color: peachpuff;
+
+  &__switch {
+    height: 2rem;
+    aspect-ratio: 1/1;
+    background-color: black;
+    border-radius: 100%;
+    outline: none;
+    border: none;
+  }
+}

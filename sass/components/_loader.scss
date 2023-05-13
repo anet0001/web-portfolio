@@ -1,0 +1,31 @@
+.loader {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fefefe;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .progress-bar {
+    --progress: 0;
+    width: min(100% - 2rem, 600px);
+    height: 1rem;
+    border: 1px solid #ccc;
+    padding: 0.2rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.2rem;
+      top: 0.2rem;
+      width: calc(100% - 0.4rem);
+      height: calc(100% - 0.4rem);
+      scale: var(--progress) 1;
+      transform-origin: left;
+      background-color: #333;
+    }
+  }
+}
