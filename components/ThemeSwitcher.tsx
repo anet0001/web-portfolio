@@ -17,7 +17,7 @@ const ThemeSwitcher: FC<TSProps> = () => {
           key={index}
           onClick={() => console.log(name)}
         >
-          {}
+          {}n
         </button>
       ))}
     </div>
