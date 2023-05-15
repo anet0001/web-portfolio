@@ -1,0 +1,14 @@
+.project-showcase {
+  align-self: flex-end;
+  width: 100%;
+  position: relative;
+
+  .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 3/2;
+    background-color: #333;
+  }
+}
