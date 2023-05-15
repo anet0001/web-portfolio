@@ -1,18 +1,19 @@
 import Clock from "@/components/Clock";
+import Logo from "@/components/Logo";
 import ProjectList from "@/components/ProjectList";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import TitleCard from "@/components/TitleCard";
 import Loader from "@/components/shared/Loader";
+import { Timeline } from "@/types/animation";
 import { gsap } from "gsap";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
-
-type Timeline = gsap.core.Timeline | undefined;
 
 export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
   const [timeline, setTimeline] = useState<Timeline | undefined>();
   const titleCardRef = useRef(null);
+  const titleCardLineOne = useRef(null);
   const scope = useRef(null);
 
   useEffect(() => {
@@ -29,11 +30,7 @@ export default function Home() {
   }, [timeline, showLoader]);
 
   useEffect(() => {
-    timeline &&
-      timeline.to(".test", {
-        y: 100,
-        duration: 3,
-      });
+    timeline && timeline;
   }, [timeline, showLoader]);
 
   return (
@@ -45,11 +42,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Loader showLoader={showLoader} setShowLoader={setShowLoader} />
-      <main ref={scope}>
+      <main ref={scope} className="container">
+        <Logo showLoader={showLoader} />
         <ThemeSwitcher />
         <ProjectList />
+        <TitleCard showLoader={showLoader} />
         <Clock />
-        <TitleCard ref={titleCardRef} />
       </main>
     </>
   );
