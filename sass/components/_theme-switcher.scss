@@ -1,17 +1,54 @@
+:root {
+  --data-index: 1;
+}
+
 .theme-switcher {
-  width: fit-content;
+  grid-area: theme-switcher;
+  justify-self: flex-end;
+
+  height: fit-content;
   display: flex;
   flex-direction: row;
-  gap: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  background-color: peachpuff;
+  justify-content: flex-end;
+  width: min(100% - 1rem, 350px);
+  cursor: pointer;
+
+  &:hover &__switch {
+    transform: translateX(calc(35% * (var(--data-index))));
+  }
 
   &__switch {
+    cursor: pointer;
     height: 2rem;
     aspect-ratio: 1/1;
-    background-color: black;
     border-radius: 100%;
     outline: none;
     border: none;
+    transform: translateX(calc(70% * (var(--data-index))));
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:hover {
+      border: 3px solid black;
+    }
+
+    &--light {
+      background-color: #e8e8e8;
+    }
+
+    &--green {
+      background-color: #4a5a3d;
+    }
+
+    &--dark {
+      background-color: #e8e8e8;
+    }
+
+    &--grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-color: black;
+    }
   }
 }
