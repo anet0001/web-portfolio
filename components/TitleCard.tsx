@@ -1,20 +1,41 @@
+import { Timeline } from "@/types/animation";
+import { gsap } from "gsap";
 import React, {
-  FC,
   ForwardRefRenderFunction,
-  HTMLProps,
-  MutableRefObject,
   forwardRef,
+  useEffect,
+  useRef,
+  useState,
 } from "react";
 
-interface TCProps {}
+interface TCProps {
+  showLoader: boolean;
+}
 
 const TitleCard: ForwardRefRenderFunction<HTMLDivElement, TCProps> = (
-  {},
+  { showLoader },
   ref
 ) => {
+  const scope = useRef(null);
+
+  useEffect(() => {
+    if (showLoader) return;
+
+    const ctx = gsap.context(() => {
+      let timeline = gsap.timeline();
+
+      timeline.from(".text", {
+        autoAlpha: 0,
+        y: 100,
+      });
+    }, scope);
+
+    return () => ctx.revert();
+  }, [showLoader]);
+
   return (
-    <div className="title-card" ref={ref}>
-      <h3 className="test">TitleCard</h3>
+    <div className="title-card" ref={scope}>
+      <span className="text">Frontend Engineer</span>
     </div>
   );
 };
