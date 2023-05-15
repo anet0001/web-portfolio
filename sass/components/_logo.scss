@@ -1,0 +1,13 @@
+.logo {
+  justify-self: flex-start;
+  align-self: flex-start;
+  grid-area: logo;
+  position: relative;
+  overflow: hidden;
+
+  span {
+    display: block;
+    font-size: 1rem;
+    visibility: hidden;
+  }
+}
