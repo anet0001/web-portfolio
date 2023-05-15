@@ -1,0 +1,39 @@
+.project-list {
+  grid-area: project-list;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+
+  ul {
+    list-style: none;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.5rem;
+
+    li {
+      a {
+        text-decoration: none;
+        color: black;
+        position: relative;
+
+        &:hover {
+          &:before {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 0.125rem;
+            width: 0;
+            background-color: #333;
+            transform-origin: right;
+            animation: slideIn 0.5s ease-in-out forwards;
+          }
+        }
+      }
+    }
+  }
+}
