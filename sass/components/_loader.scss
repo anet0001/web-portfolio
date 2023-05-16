@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   min-height: 100vh;
-  background-color: #fefefe;
+  background-color: var(--bg-color);
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@
     --progress: 0;
     width: min(100% - 2rem, 600px);
     height: 1.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--text-color);
     padding: 0.2rem;
     position: relative;
     visibility: hidden;
@@ -26,7 +26,7 @@
       height: calc(100% - 0.4rem);
       scale: var(--progress) 1;
       transform-origin: left;
-      background-color: #333;
+      background-color: var(--text-color);
     }
   }
 }
