@@ -16,13 +16,14 @@ export interface MyCustomCSS extends CSSProperties {
 const ThemeSwitcher: FC<TSProps> = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [timeline, setTimeline] = useState<Timeline | undefined>();
+  const [currentTheme, setCurrentTheme] = useState("");
   const scope = useRef(null);
 
   const themes: Theme[] = [
     { name: "light" },
     { name: "green" },
-    { name: "dark" },
-    { name: "grid" },
+    { name: "spring-green" },
+    { name: "orange" },
   ];
 
   // useEffect(() => {
@@ -47,8 +48,21 @@ const ThemeSwitcher: FC<TSProps> = () => {
   //     });
   // }, [timeline, isHovered]);
 
+  useEffect(() => {
+    const theme = localStorage.getItem("current-theme");
+    if (!theme) return;
+    document.body.setAttribute("data-theme", theme);
+    setCurrentTheme(theme);
+  }, []);
+
   const reverseIndex = (index: number) => {
     return themes.length - index - 1;
+  };
+
+  const handleThemeSwitch = (theme: string) => {
+    document.body.setAttribute("data-theme", theme);
+    localStorage.setItem("current-theme", theme);
+    setCurrentTheme(theme);
   };
 
   return (
@@ -59,9 +73,11 @@ const ThemeSwitcher: FC<TSProps> = () => {
     >
       {themes.map(({ name }, index) => (
         <button
-          className={`theme-switcher__switch theme-switcher__switch--${name}`}
+          className={`theme-switcher__switch theme-switcher__switch--${name} ${
+            currentTheme === name ? "theme-switcher__switch--active" : ""
+          }`}
           key={reverseIndex(index)}
-          onClick={() => console.log(name)}
+          onClick={() => handleThemeSwitch(`${name}`)}
           style={{ "--data-index": reverseIndex(index) } as MyCustomCSS}
         />
       ))}
