@@ -7,13 +7,19 @@ interface PLProps {
   showLoader: boolean;
 }
 
+interface Project {
+  name: string;
+  link: string;
+  context: string;
+}
+
 const ProjectList: FC<PLProps> = ({ showLoader }) => {
   const scope = useRef(null);
-  const projects = [
-    { name: "Nonso Anetoh", link: "/" },
-    { name: "Rexvirgo Media", link: "" },
-    { name: "Jasmine College", link: "" },
-    { name: "Shop Rebellis", link: "" },
+  const projects: Project[] = [
+    { name: "Nonso Anetoh", link: "/", context: "" },
+    { name: "Rexvirgo Media", link: "", context: "" },
+    { name: "Jasmine College", link: "", context: "" },
+    { name: "Shop Rebellis", link: "", context: "" },
   ];
 
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
