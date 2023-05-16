@@ -14,13 +14,13 @@
     aspect-ratio: 1/1;
 
     &--working {
-      background-color: rgb(4, 83, 4);
+      background-color: var(--status-indicator-color);
       animation: blink 1s infinite;
     }
 
     &--resting {
       border-radius: 100%;
-      background-color: rgb(240, 117, 117);
+      background-color: orange;
     }
   }
 }
