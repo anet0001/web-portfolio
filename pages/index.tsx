@@ -16,6 +16,10 @@ export default function Home() {
   const titleCardLineOne = useRef(null);
   const scope = useRef(null);
 
+  const config = {
+    showLoader,
+  };
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
@@ -43,11 +47,11 @@ export default function Home() {
       </Head>
       <Loader showLoader={showLoader} setShowLoader={setShowLoader} />
       <main ref={scope} className="container">
-        <Logo showLoader={showLoader} />
-        <ThemeSwitcher />
-        <ProjectList />
-        <TitleCard showLoader={showLoader} />
-        <Clock />
+        <Logo {...config} />
+        <ThemeSwitcher {...config} />
+        <ProjectList {...config} />
+        <TitleCard {...config} />
+        <Clock {...config} />
       </main>
     </>
   );

@@ -4,7 +4,7 @@
   grid-template-rows: repeat(5, 1fr);
   gap: 2rem;
   grid-template-areas:
-    "logo . . . . theme-switcher"
+    "logo . . . . theme-switcher" 
     ". . . . project-list project-list"
     ". . . . project-list project-list"
     ". . . . . ."

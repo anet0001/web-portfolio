@@ -17,6 +17,7 @@ const TitleCard: ForwardRefRenderFunction<HTMLDivElement, TCProps> = (
   ref
 ) => {
   const scope = useRef(null);
+  const title = "Frontend Developer";
 
   useEffect(() => {
     if (showLoader) return;
@@ -35,7 +36,7 @@ const TitleCard: ForwardRefRenderFunction<HTMLDivElement, TCProps> = (
 
   return (
     <div className="title-card" ref={scope}>
-      <span className="text">Frontend Engineer</span>
+      <span className="text">{title}</span>
     </div>
   );
 };
