@@ -1,9 +1,64 @@
+:root {
+  --bg-color: #e8e8e8;
+  --text-color: #303030;
+  --secondary-color: #ff9292;
+  --status-indicator-color: rgb(4, 83, 4);
+  --loading-bar-color: #303030;
+  --outline-color: black;
+}
+
+body[data-theme="light"] {
+  --bg-color: #e8e8e8;
+  --text-color: #303030;
+  --secondary-color: #ff9292;
+  --status-indicator-color: rgb(4, 83, 4);
+  --loading-bar-color: #303030;
+  --outline-color: black;
+}
+
+body[data-theme="green"] {
+  --bg-color: #4c5c3f;
+  --text-color: #c2ceb5;
+  --secondary-color: #852747;
+  --status-indicator-color: white;
+  --loading-bar-color: #4c5c3f;
+  --outline-color: white;
+}
+
+body[data-theme="spring-green"] {
+  --bg-color: teal;
+  --text-color: #feffcc;
+  --secondary-color: #852747;
+  --status-indicator-color: #feffcc;
+  --loading-bar-color: teal;
+  --outline-color: white;
+}
+
+body[data-theme="orange"] {
+  --bg-color: orange;
+  --text-color: #112b22;
+  --secondary-color: #fff;
+  --status-indicator-color: #112b22;
+  --loading-bar-color: red;
+  --outline-color: black;
+}
+
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+
+  -webkit-transition: background-color 500ms linear;
+  -ms-transition: background-color 500ms linear;
+  transition: background-color 500ms linear;
 }
 
 image,
