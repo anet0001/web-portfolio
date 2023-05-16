@@ -35,7 +35,7 @@ const Loader: FC<LoaderProps> = ({ showLoader, setShowLoader }) => {
               delay: 0.5,
             },
           ],
-          duration: 2,
+          duration: 2.5,
           onComplete: () => {
             setShowLoader(false);
           },
