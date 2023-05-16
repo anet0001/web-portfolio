@@ -1,10 +1,30 @@
-import React, { FC, useEffect, useState } from "react";
+import { gsap } from "gsap";
+import React, { FC, useEffect, useRef, useState } from "react";
 
-interface ClockProps {}
+interface ClockProps {
+  showLoader: boolean;
+}
 
-const Clock: FC<ClockProps> = () => {
+const Clock: FC<ClockProps> = ({ showLoader }) => {
+  const scope = useRef(null);
   const [ottawaTime, setOttawaTime] = useState("");
   const [workingHours, setWorkingHours] = useState(false);
+
+  useEffect(() => {
+    if (showLoader) return;
+
+    const ctx = gsap.context(() => {
+      const timeline = gsap.timeline();
+
+      timeline.from([".time", ".status"], {
+        autoAlpha: 0,
+        y: 100,
+        stagger: 0.05,
+      });
+    }, scope);
+
+    return () => ctx.revert();
+  }, [showLoader]);
 
   useEffect(() => {
     const displayCurrentTime = () => {
@@ -31,7 +51,7 @@ const Clock: FC<ClockProps> = () => {
   }, []);
 
   return (
-    <div className="clock">
+    <div className="clock" ref={scope}>
       <span className="time">{ottawaTime}</span>
       <span
         className={`status ${

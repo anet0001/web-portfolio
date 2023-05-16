@@ -8,10 +8,15 @@
   align-items: center;
   gap: 0.25rem;
 
+  .time {
+    visibility: hidden;
+  }
+
   .status {
     display: inline-block;
     width: 10px;
     aspect-ratio: 1/1;
+    visibility: hidden;
 
     &--working {
       background-color: var(--status-indicator-color);
