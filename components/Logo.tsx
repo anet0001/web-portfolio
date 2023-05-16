@@ -5,7 +5,6 @@ import React, {
   forwardRef,
   useEffect,
   useRef,
-  useState,
 } from "react";
 
 interface TCProps {
