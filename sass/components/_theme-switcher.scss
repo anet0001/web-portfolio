@@ -28,7 +28,27 @@
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
     &:hover {
-      border: 3px solid black;
+      border: 3px dotted var(--outline-color);
+    }
+
+    &--active {
+      border: 3px solid var(--outline-color);
+
+      &:hover {
+        border: 3px solid var(--outline-color);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30%;
+      aspect-ratio: 1/1;
+      border-radius: 100%;
+      background-color: black;
+      translate: -50% -50%;
     }
 
     &--light {
@@ -39,16 +59,12 @@
       background-color: #4a5a3d;
     }
 
-    &--dark {
-      background-color: #e8e8e8;
+    &--orange {
+      background-color: orange;
     }
 
-    &--grid {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background-color: black;
+    &--spring-green {
+      background-color: #157485;
     }
   }
 }
