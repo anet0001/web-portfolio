@@ -1,10 +1,14 @@
 import Link from "next/link";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useRef, useState } from "react";
 import ProjectShowcase from "./ProjectShowcase";
+import { gsap } from "gsap";
 
-interface PLProps {}
+interface PLProps {
+  showLoader: boolean;
+}
 
-const ProjectList: FC<PLProps> = () => {
+const ProjectList: FC<PLProps> = ({ showLoader }) => {
+  const scope = useRef(null);
   const projects = [
     { name: "Nonso Anetoh", link: "/" },
     { name: "Rexvirgo Media", link: "" },
@@ -14,8 +18,24 @@ const ProjectList: FC<PLProps> = () => {
 
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
+  useEffect(() => {
+    if (showLoader) return;
+
+    const ctx = gsap.context(() => {
+      const timeline = gsap.timeline();
+
+      timeline.from(".project-list ul li", {
+        autoAlpha: 0,
+        y: 50,
+        stagger: 0.07,
+      });
+    }, scope);
+
+    return () => ctx.revert();
+  }, [showLoader]);
+
   return (
-    <div className="project-list">
+    <div className="project-list" ref={scope}>
       <ul>
         {projects.map(({ name, link }, index) => {
           return (
