@@ -8,12 +8,36 @@ import { Timeline } from "@/types/animation";
 import { gsap } from "gsap";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
+import localFont from "next/font/local";
+
+const CHPublic = localFont({
+  src: [
+    {
+      path: "../public/fonts/CH-public/CooperHewitt-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/CH-public/CooperHewitt-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/CH-public/CooperHewitt-Bold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/CH-public/CooperHewitt-Book.otf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+});
 
 export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
   const [timeline, setTimeline] = useState<Timeline | undefined>();
-  const titleCardRef = useRef(null);
-  const titleCardLineOne = useRef(null);
   const scope = useRef(null);
 
   const config = {
@@ -46,7 +70,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Loader showLoader={showLoader} setShowLoader={setShowLoader} />
-      <main ref={scope} className="container">
+      <main ref={scope} className={`${CHPublic.className} container`}>
         <Logo {...config} />
         <ThemeSwitcher {...config} />
         <ProjectList {...config} />
