@@ -3,7 +3,9 @@ import { GridNine } from "@phosphor-icons/react";
 import { gsap } from "gsap";
 import React, { CSSProperties, FC, useEffect, useRef, useState } from "react";
 
-interface TSProps {}
+interface TSProps {
+  showLoader: boolean;
+}
 
 interface Theme {
   name: string;
@@ -13,9 +15,8 @@ export interface MyCustomCSS extends CSSProperties {
   "--data-index": number;
 }
 
-const ThemeSwitcher: FC<TSProps> = () => {
+const ThemeSwitcher: FC<TSProps> = ({ showLoader }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [timeline, setTimeline] = useState<Timeline | undefined>();
   const [currentTheme, setCurrentTheme] = useState("");
   const scope = useRef(null);
 
@@ -26,31 +27,27 @@ const ThemeSwitcher: FC<TSProps> = () => {
     { name: "orange" },
   ];
 
-  // useEffect(() => {
-  //   const ctx = gsap.context(() => {
-  //     const tl = gsap.timeline();
-  //     setTimeline(tl);
-  //   }, scope);
+  useEffect(() => {
+    if (showLoader) return;
 
-  //   return () => ctx.revert();
-  // }, []);
+    const ctx = gsap.context(() => {
+      const timeline = gsap.timeline();
 
-  // useEffect(() => {
-  //   timeline && timeline.reversed(!isHovered);
-  // }, [timeline, isHovered]);
+      timeline.from(".theme-switcher__switch", {
+        autoAlpha: 0,
+        stagger: 0.1,
+      });
+    }, scope);
 
-  // useEffect(() => {
-  //   timeline &&
-  //     timeline.to(".theme-switcher__switch", {
-  //       xPercent: (index) => {
-  //         return index === 0 ? 0 : index * 100;
-  //       },
-  //     });
-  // }, [timeline, isHovered]);
+    return () => ctx.revert();
+  }, [showLoader]);
 
   useEffect(() => {
     const theme = localStorage.getItem("current-theme");
-    if (!theme) return;
+    if (!theme) {
+      setCurrentTheme("light");
+      return;
+    }
     document.body.setAttribute("data-theme", theme);
     setCurrentTheme(theme);
   }, []);
@@ -70,6 +67,7 @@ const ThemeSwitcher: FC<TSProps> = () => {
       className="theme-switcher"
       onMouseOver={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      ref={scope}
     >
       {themes.map(({ name }, index) => (
         <button
