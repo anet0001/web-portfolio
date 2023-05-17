@@ -17,7 +17,7 @@ const TitleCard: ForwardRefRenderFunction<HTMLDivElement, TCProps> = (
   ref
 ) => {
   const scope = useRef(null);
-  const title = "Frontend Developer";
+  const title = "Front-end Developer";
 
   useEffect(() => {
     if (showLoader) return;
