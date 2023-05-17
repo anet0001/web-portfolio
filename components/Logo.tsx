@@ -15,6 +15,7 @@ const Logo: ForwardRefRenderFunction<HTMLDivElement, TCProps> = (
   { showLoader },
   ref
 ) => {
+  const logo = "  (Nonso Anetoh)";
   const scope = useRef(null);
 
   useEffect(() => {
@@ -34,7 +35,7 @@ const Logo: ForwardRefRenderFunction<HTMLDivElement, TCProps> = (
 
   return (
     <div className="logo" ref={scope}>
-      <span className="text">Nonso Anetoh</span>
+      <span className="text">{logo}</span>
     </div>
   );
 };
