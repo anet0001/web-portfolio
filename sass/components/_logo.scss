@@ -4,6 +4,8 @@
   grid-area: logo;
   position: relative;
   overflow: hidden;
+   z-index: 200;
+  padding: 2rem;
 
   span {
     display: block;
