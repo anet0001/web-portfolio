@@ -34,6 +34,7 @@ const ProjectList: FC<PLProps> = ({ showLoader }) => {
         autoAlpha: 0,
         y: 50,
         stagger: 0.07,
+        delay: 0.3,
       });
     }, scope);
 
