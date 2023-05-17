@@ -5,6 +5,8 @@
 .theme-switcher {
   grid-area: theme-switcher;
   justify-self: flex-end;
+   z-index: 200;
+  padding: 2rem;
 
   height: fit-content;
   display: flex;
