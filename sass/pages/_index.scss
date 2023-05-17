@@ -1,15 +1,15 @@
 .container {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(5, 1fr);
   gap: 2rem;
   grid-template-areas:
-    "logo . . . . theme-switcher" 
+    "logo . . . . theme-switcher"
     ". . . . project-list project-list"
     ". . . . project-list project-list"
     ". . . . . ."
     "title-card title-card title-card title-card title-card clock";
   min-height: -webkit-fill-available;
   min-height: 100vh;
-  padding: 2rem;
 }
