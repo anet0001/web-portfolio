@@ -9,6 +9,7 @@ import { gsap } from "gsap";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import localFont from "next/font/local";
+import GridBackground from "@/components/shared/GridBackground";
 
 const CHPublic = localFont({
   src: [
@@ -71,6 +72,7 @@ export default function Home() {
       </Head>
       <Loader showLoader={showLoader} setShowLoader={setShowLoader} />
       <main ref={scope} className={`${CHPublic.className} container`}>
+        <GridBackground />
         <Logo {...config} />
         <ThemeSwitcher {...config} />
         <ProjectList {...config} />
