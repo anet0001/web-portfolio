@@ -2,6 +2,8 @@
   grid-area: clock;
   justify-self: flex-end;
   align-self: flex-end;
+  z-index: 200;
+  padding: 2rem;
 
   display: flex;
   flex-direction: row;
