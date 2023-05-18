@@ -1,0 +1,22 @@
+.project-info {
+  align-self: flex-end;
+  width: 250px;
+  position: relative;
+  margin-top: 2rem;
+
+  .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 300;
+    aspect-ratio: 3/2;
+    display: flex;
+    flex-wrap: wrap;
+    word-wrap: normal;
+
+    span {
+      text-align: right;
+    }
+  }
+}
