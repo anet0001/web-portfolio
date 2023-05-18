@@ -35,7 +35,7 @@ const ThemeSwitcher: FC<TSProps> = ({ showLoader }) => {
 
       timeline.from(".theme-switcher__switch", {
         autoAlpha: 0,
-        stagger: 0.1,
+        stagger: 0.25,
       });
     }, scope);
 
