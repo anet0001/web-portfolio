@@ -10,11 +10,15 @@
   gap: 1rem;
 
   li {
+    overflow: hidden;
+
     a {
       position: relative;
       text-decoration: none;
       color: inherit;
+      visibility: hidden;
     }
+
     &:hover a {
       &:before {
         content: "";

@@ -1,9 +1,35 @@
+import { gsap } from "gsap";
 import Link from "next/link";
 import React, { FC } from "react";
+import { useEffect } from "react";
+import { useRef } from "react";
 
-const ContactList: FC = () => {
+interface CLProps {
+  showLoader: boolean;
+}
+
+const ContactList: FC<CLProps> = ({ showLoader }) => {
+  const scope = useRef(null);
+
+  useEffect(() => {
+    if (showLoader) return;
+
+    const ctx = gsap.context(() => {
+      const timeline = gsap.timeline();
+
+      timeline.from("a", {
+        autoAlpha: 0,
+        y: 100,
+        stagger: 0.07,
+        delay: 0.3,
+      });
+    }, scope);
+
+    return () => ctx.revert();
+  }, [showLoader]);
+
   return (
-    <ul className="contact-list">
+    <ul className="contact-list" ref={scope}>
       <li>
         <Link
           target="_blank"
