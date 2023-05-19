@@ -1,5 +1,3 @@
-import { Timeline } from "@/types/animation";
-import { GridNine } from "@phosphor-icons/react";
 import { gsap } from "gsap";
 import React, { CSSProperties, FC, useEffect, useRef, useState } from "react";
 
@@ -35,7 +33,7 @@ const ThemeSwitcher: FC<TSProps> = ({ showLoader }) => {
 
       timeline.from(".theme-switcher__switch", {
         autoAlpha: 0,
-        stagger: 0.25,
+        stagger: 0.15,
       });
     }, scope);
 
@@ -74,9 +72,9 @@ const ThemeSwitcher: FC<TSProps> = ({ showLoader }) => {
           className={`theme-switcher__switch theme-switcher__switch--${name} ${
             currentTheme === name ? "theme-switcher__switch--active" : ""
           }`}
-          key={reverseIndex(index)}
+          key={index}
           onClick={() => handleThemeSwitch(`${name}`)}
-          style={{ "--data-index": reverseIndex(index) } as MyCustomCSS}
+          style={{ "--data-index": index } as MyCustomCSS}
         />
       ))}
     </div>
