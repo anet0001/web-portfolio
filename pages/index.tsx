@@ -75,7 +75,7 @@ export default function Home() {
       <main ref={scope} className={`${CHPublic.className} container`}>
         <GridBackground />
         <Logo {...config} />
-        <ContactList />
+        <ContactList {...config} />
         <ThemeSwitcher {...config} />
         <ProjectList {...config} />
         <TitleCard {...config} />
