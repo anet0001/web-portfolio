@@ -25,7 +25,7 @@ body[data-theme="green"] {
   --status-indicator-color: white;
   --loading-bar-color: #4c5c3f;
   --outline-color: white;
-  --gradient: rgba(255, 255, 255, 0.06);
+  --gradient: rgba(255, 255, 255, 0.04);
 }
 
 body[data-theme="spring-green"] {
@@ -35,7 +35,7 @@ body[data-theme="spring-green"] {
   --status-indicator-color: #feffcc;
   --loading-bar-color: teal;
   --outline-color: white;
-  --gradient: rgba(255, 255, 255, 0.06);
+  --gradient: rgba(255, 255, 255, 0.04);
 }
 
 body[data-theme="orange"] {
@@ -45,7 +45,7 @@ body[data-theme="orange"] {
   --status-indicator-color: #112b22;
   --loading-bar-color: red;
   --outline-color: black;
-  --gradient: rgba(255, 255, 255, 0.06);
+  --gradient: rgba(255, 255, 255, 0.04);
 }
 
 *,

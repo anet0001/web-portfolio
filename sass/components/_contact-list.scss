@@ -1,6 +1,32 @@
 .contact-list {
+  grid-area: contact-list;
+
   display: flex;
   flex-direction: row;
   list-style: none;
   z-index: 200;
+  height: fit-content;
+  padding: 2rem 0;
+  gap: 1rem;
+
+  li {
+    a {
+      position: relative;
+      text-decoration: none;
+      color: inherit;
+    }
+    &:hover a {
+      &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 0.125rem;
+        width: 0;
+        background-color: var(--text-color);
+        transform-origin: right;
+        animation: slideIn 0.5s ease-in-out forwards;
+      }
+    }
+  }
 }
