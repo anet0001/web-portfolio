@@ -17,9 +17,21 @@ const ProjectList: FC<PLProps> = ({ showLoader }) => {
   const scope = useRef(null);
   const projects: Project[] = [
     { name: "Nonso Anetoh", link: "/", context: "" },
-    { name: "Rexvirgo Media", link: "/", context: "" },
-    { name: "Jasmine College", link: "/", context: "" },
-    { name: "Shop Rebellis", link: "/", context: "" },
+    {
+      name: "Rexvirgo Media",
+      link: "https://www.rexvirgomedia.com/en",
+      context: "",
+    },
+    {
+      name: "Jasmine College",
+      link: "https://www.jasminecollege.sch.ng/",
+      context: "",
+    },
+    {
+      name: "Shop Rebellis",
+      link: "https://dan.com/buy-domain/shoprebellis.com?redirected=true",
+      context: "",
+    },
   ];
 
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -52,7 +64,9 @@ const ProjectList: FC<PLProps> = ({ showLoader }) => {
               onMouseEnter={() => setHoveredProject(index + 1)}
               onMouseLeave={() => setHoveredProject(null)}
             >
-              <Link href={link}>{name}</Link>
+              <Link target="_blank" rel="noreferrer" href={link}>
+                {name}
+              </Link>
             </li>
           );
         })}
