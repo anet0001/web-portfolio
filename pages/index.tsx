@@ -10,6 +10,7 @@ import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import localFont from "next/font/local";
 import GridBackground from "@/components/shared/GridBackground";
+import ContactList from "@/components/ContactList";
 
 const CHPublic = localFont({
   src: [
@@ -74,6 +75,7 @@ export default function Home() {
       <main ref={scope} className={`${CHPublic.className} container`}>
         <GridBackground />
         <Logo {...config} />
+        <ContactList />
         <ThemeSwitcher {...config} />
         <ProjectList {...config} />
         <TitleCard {...config} />
