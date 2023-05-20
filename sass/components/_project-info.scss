@@ -19,6 +19,10 @@
     flex-wrap: wrap;
     word-wrap: normal;
 
+    @media (max-width: 450px) {
+      position: relative;
+    }
+
     .description {
       text-align: right;
       font-size: var(--fs-400);
