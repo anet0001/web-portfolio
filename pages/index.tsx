@@ -4,7 +4,6 @@ import ProjectList from "@/components/ProjectList";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import TitleCard from "@/components/TitleCard";
 import Loader from "@/components/shared/Loader";
-import { Timeline } from "@/types/animation";
 import { gsap } from "gsap";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
@@ -39,7 +38,7 @@ const CHPublic = localFont({
 
 export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
-  const [timeline, setTimeline] = useState<Timeline | undefined>();
+  const [timeline, setTimeline] = useState<gsap.core.Timeline | undefined>();
   const scope = useRef(null);
 
   const config = {
