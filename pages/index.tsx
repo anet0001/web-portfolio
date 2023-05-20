@@ -58,9 +58,9 @@ export default function Home() {
     timeline && timeline.reversed(!showLoader);
   }, [timeline, showLoader]);
 
-  useEffect(() => {
-    timeline && timeline;
-  }, [timeline, showLoader]);
+  // useEffect(() => {
+  //   timeline && timeline;
+  // }, [timeline, showLoader]);
 
   return (
     <>

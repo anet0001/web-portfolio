@@ -20,6 +20,7 @@
   }
 
   &:hover &__switch {
+    //noinspection CssInvalidFunction
     transform: translateX(calc(30% * (var(--data-index))));
 
     @media (max-width: 450px) {
@@ -34,6 +35,7 @@
     border-radius: 100%;
     outline: none;
     border: none;
+    //noinspection CssInvalidFunction
     transform: translateX(calc(70% * (var(--data-index))));
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     visibility: hidden;
