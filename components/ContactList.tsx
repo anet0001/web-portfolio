@@ -1,15 +1,12 @@
+import { GenericComponent } from "@/types";
 import { gsap } from "gsap";
 import Link from "next/link";
 import React, { FC } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
 
-interface CLProps {
-  showLoader: boolean;
-}
-
-const ContactList: FC<CLProps> = ({ showLoader }) => {
-  const scope = useRef(null);
+const ContactList: FC<GenericComponent> = ({ showLoader }) => {
+  const scope = useRef<HTMLUListElement | null>(null);
 
   useEffect(() => {
     if (showLoader) return;

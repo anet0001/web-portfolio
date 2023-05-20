@@ -1,14 +1,11 @@
+import { GenericComponent } from "@/types";
 import { gsap } from "gsap";
 import React, { FC, useEffect, useRef, useState } from "react";
 
-interface ClockProps {
-  showLoader: boolean;
-}
-
-const Clock: FC<ClockProps> = ({ showLoader }) => {
-  const scope = useRef(null);
-  const [ottawaTime, setOttawaTime] = useState("");
-  const [workingHours, setWorkingHours] = useState(false);
+const Clock: FC<GenericComponent> = ({ showLoader }) => {
+  const scope = useRef<HTMLDivElement | null>(null);
+  const [ottawaTime, setOttawaTime] = useState<string>("");
+  const [workingHours, setWorkingHours] = useState<boolean>(false);
 
   useEffect(() => {
     if (showLoader) return;

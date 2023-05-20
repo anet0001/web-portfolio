@@ -1,22 +1,10 @@
-import { Timeline } from "@/types/animation";
+import { GenericComponent } from "@/types";
 import { gsap } from "gsap";
-import React, {
-  ForwardRefRenderFunction,
-  forwardRef,
-  useEffect,
-  useRef,
-} from "react";
+import React, { FC, useEffect, useRef } from "react";
 
-interface TCProps {
-  showLoader: boolean;
-}
-
-const Logo: ForwardRefRenderFunction<HTMLDivElement, TCProps> = (
-  { showLoader },
-  ref
-) => {
-  const logo = "  (Nonso Anetoh)";
-  const scope = useRef(null);
+const Logo: FC<GenericComponent> = ({ showLoader }) => {
+  const logo = "(Nonso Anetoh)";
+  const scope = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (showLoader) return;
@@ -40,4 +28,4 @@ const Logo: ForwardRefRenderFunction<HTMLDivElement, TCProps> = (
   );
 };
 
-export default forwardRef(Logo);
+export default Logo;

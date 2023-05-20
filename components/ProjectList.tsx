@@ -2,37 +2,11 @@ import Link from "next/link";
 import React, { FC, useEffect, useRef, useState } from "react";
 import ProjectDescription from "./ProjectDescription";
 import { gsap } from "gsap";
+import { GenericComponent } from "@/types";
+import { projects } from "@/data/projects";
 
-interface PLProps {
-  showLoader: boolean;
-}
-
-interface Project {
-  name: string;
-  link: string;
-  context: string;
-}
-
-const ProjectList: FC<PLProps> = ({ showLoader }) => {
-  const scope = useRef(null);
-  const projects: Project[] = [
-    { name: "Nonso Anetoh", link: "/", context: "" },
-    {
-      name: "Rexvirgo Media",
-      link: "https://www.rexvirgomedia.com/en",
-      context: "",
-    },
-    {
-      name: "Jasmine College",
-      link: "https://www.jasminecollege.sch.ng/",
-      context: "",
-    },
-    {
-      name: "Shop Rebellis",
-      link: "https://dan.com/buy-domain/shoprebellis.com?redirected=true",
-      context: "",
-    },
-  ];
+const ProjectList: FC<GenericComponent> = ({ showLoader }) => {
+  const scope = useRef<HTMLDivElement | null>(null);
 
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 

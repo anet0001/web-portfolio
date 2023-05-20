@@ -1,29 +1,16 @@
+import { themes } from "@/data";
+import { GenericComponent } from "@/types";
 import { gsap } from "gsap";
 import React, { CSSProperties, FC, useEffect, useRef, useState } from "react";
-
-interface TSProps {
-  showLoader: boolean;
-}
-
-interface Theme {
-  name: string;
-}
 
 export interface MyCustomCSS extends CSSProperties {
   "--data-index": number;
 }
 
-const ThemeSwitcher: FC<TSProps> = ({ showLoader }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState("");
-  const scope = useRef(null);
-
-  const themes: Theme[] = [
-    { name: "light" },
-    { name: "green" },
-    { name: "spring-green" },
-    { name: "orange" },
-  ];
+const ThemeSwitcher: FC<GenericComponent> = ({ showLoader }) => {
+  const scope = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [currentTheme, setCurrentTheme] = useState<string>("");
 
   useEffect(() => {
     if (showLoader) return;
@@ -49,10 +36,6 @@ const ThemeSwitcher: FC<TSProps> = ({ showLoader }) => {
     document.body.setAttribute("data-theme", theme);
     setCurrentTheme(theme);
   }, []);
-
-  const reverseIndex = (index: number) => {
-    return themes.length - index - 1;
-  };
 
   const handleThemeSwitch = (theme: string) => {
     document.body.setAttribute("data-theme", theme);

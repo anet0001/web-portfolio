@@ -1,22 +1,9 @@
-import { Timeline } from "@/types/animation";
+import { GenericComponent } from "@/types";
 import { gsap } from "gsap";
-import React, {
-  ForwardRefRenderFunction,
-  forwardRef,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { FC, forwardRef, useEffect, useRef } from "react";
 
-interface TCProps {
-  showLoader: boolean;
-}
-
-const TitleCard: ForwardRefRenderFunction<HTMLDivElement, TCProps> = (
-  { showLoader },
-  ref
-) => {
-  const scope = useRef(null);
+const TitleCard: FC<GenericComponent> = ({ showLoader }) => {
+  const scope = useRef<HTMLDivElement | null>(null);
   const title = "Front-end Developer";
 
   useEffect(() => {
@@ -41,4 +28,4 @@ const TitleCard: ForwardRefRenderFunction<HTMLDivElement, TCProps> = (
   );
 };
 
-export default forwardRef(TitleCard);
+export default TitleCard;
