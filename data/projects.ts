@@ -9,13 +9,13 @@ export const projects: Project[] = [
   },
   {
     name: "Rexvirgo Media",
-    link: "/",
+    link: "https://rexvirgomedia.com",
     description:
       "A website for a turkey-based digital design agency built with Next.js, SCSS, Sanity CMS, GSAP and deployed on Vercel.",
   },
   {
     name: "Jasmine College",
-    link: "/",
+    link: "https://jasminecollege.sch.ng",
     description: "A website for a college in Nigeria built with React and SCSS",
   },
   {

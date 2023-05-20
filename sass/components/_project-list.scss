@@ -8,12 +8,17 @@
   position: relative;
   z-index: 200;
   padding: 2rem;
+  width: min(100%, 400px);
 
   .heading {
     font-weight: 600;
     text-align: right;
     margin-bottom: 1rem;
     visibility: hidden;
+
+    @media (max-width: 450px) {
+      text-align: left;
+    }
   }
 
   ul {
@@ -24,27 +29,55 @@
     justify-content: flex-end;
     gap: 0.5rem;
 
+    @media (max-width: 450px) {
+      justify-self: flex-start;
+      text-align: left;
+    }
+
     li {
       visibility: hidden;
+
+      @media (max-width: 450px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .info-toggle {
+          display: block;
+        }
+      }
+
+      @media (min-width: 451px) {
+        .info-toggle {
+          display: none;
+        }
+      }
 
       a {
         text-decoration: none;
         color: inherit;
         position: relative;
         font-weight: 400;
+        font-size: var(--fs-400);
+
+        @media (max-width: 450px) {
+          flex: 1;
+        }
       }
 
       &:hover a {
-        &:before {
-          content: "";
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          height: 0.125rem;
-          width: 0;
-          background-color: var(--text-color);
-          transform-origin: right;
-          animation: slideIn 0.5s ease-in-out forwards;
+        @media (min-width: 451px) {
+          &:before {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 0.125rem;
+            width: 0;
+            background-color: var(--text-color);
+            transform-origin: right;
+            animation: slideIn 0.5s ease-in-out forwards;
+          }
         }
       }
     }

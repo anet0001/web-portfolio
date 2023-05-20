@@ -4,6 +4,10 @@
   position: relative;
   margin-top: 2rem;
 
+  @media (max-width: 450px) {
+    margin-top: 0rem;
+  }
+
   .inner {
     position: absolute;
     top: 0;
@@ -15,8 +19,14 @@
     flex-wrap: wrap;
     word-wrap: normal;
 
-    span {
+    .description {
       text-align: right;
+      font-size: var(--fs-400);
+
+      @media (max-width: 450px) {
+        text-align: left;
+        padding-top: 2rem;
+      }
     }
   }
 }

@@ -6,13 +6,13 @@ const ProjectDescription: FC<ProjectDescriptionComponent> = ({
   hoveredProject,
 }) => {
   return (
-    <div className="project-info">
+    <article className="project-info">
       <div className="inner">
-        <span>
+        <span className="description">
           {hoveredProject ? projects[hoveredProject - 1]?.description : null}
         </span>
       </div>
-    </div>
+    </article>
   );
 };
 

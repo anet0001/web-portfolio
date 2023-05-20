@@ -71,7 +71,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Loader showLoader={showLoader} setShowLoader={setShowLoader} />
-      <main ref={scope} className={`${CHPublic.className} container`}>
+      <main ref={scope} className={`${CHPublic.className}`}>
         <GridBackground />
         <Logo {...config} />
         <ContactList {...config} />

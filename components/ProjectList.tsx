@@ -41,6 +41,12 @@ const ProjectList: FC<GenericComponent> = ({ showLoader }) => {
               <Link target="_blank" rel="noreferrer" href={link}>
                 {name}
               </Link>
+              <span
+                className="info-toggle"
+                onClick={() => setHoveredProject(index + 1)}
+              >
+                +
+              </span>
             </li>
           );
         })}

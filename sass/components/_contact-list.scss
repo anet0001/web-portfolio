@@ -9,6 +9,10 @@
   padding: 2rem 0;
   gap: 1rem;
 
+  @media (max-width: 450px) {
+    padding: 0 2rem;
+  }
+
   li {
     overflow: hidden;
 
@@ -17,6 +21,7 @@
       text-decoration: none;
       color: inherit;
       visibility: hidden;
+      font-size: var(--fs-400);
     }
 
     &:hover a {

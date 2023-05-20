@@ -37,7 +37,7 @@ const ContactList: FC<GenericComponent> = ({ showLoader }) => {
         </Link>
       </li>
       <li>
-        <Link href="mailto:nonsoanetoh@gmail.com">Email Me</Link>
+        <Link href="mailto:nonsoanetoh@gmail.com">Email</Link>
       </li>
     </ul>
   );

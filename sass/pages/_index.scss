@@ -1,4 +1,4 @@
-.container {
+main {
   position: relative;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -12,4 +12,19 @@
     "title-card title-card title-card title-card title-card clock";
   min-height: -webkit-fill-available;
   min-height: 100vh;
+
+  @media (max-width: 668px) {
+    grid-template-areas:
+      "logo logo . contact-list . theme-switcher"
+      ". . . . project-list project-list"
+      ". . . . project-list project-list"
+      ". . . . . ."
+      "title-card title-card title-card title-card title-card title-card";
+  }
+
+  @media (max-width: 450px) {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
 }

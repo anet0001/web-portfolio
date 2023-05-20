@@ -15,8 +15,16 @@
   width: min(100% - 1rem, 350px);
   cursor: pointer;
 
+  @media (max-width: 450px) {
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
   &:hover &__switch {
     transform: translateX(calc(30% * (var(--data-index))));
+
+    @media (max-width: 450px) {
+      transform: translateX(0);
+    }
   }
 
   &__switch {
@@ -29,6 +37,14 @@
     transform: translateX(calc(70% * (var(--data-index))));
     transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     visibility: hidden;
+
+    @media (max-width: 450px) {
+      transform: translateX(0);
+
+      &:not(:first-child) {
+        margin-right: 0.25rem;
+      }
+    }
 
     &:hover {
       border: 3px dotted var(--outline-color);

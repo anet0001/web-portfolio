@@ -10,9 +10,14 @@
   align-items: center;
   gap: 0.25rem;
 
+  @media (max-width: 668px) {
+    display: none;
+  }
+
   .time {
     visibility: hidden;
     font-weight: 400;
+    font-size: var(--fs-400);
   }
 
   .status {

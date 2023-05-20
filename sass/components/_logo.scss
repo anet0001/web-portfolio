@@ -4,13 +4,13 @@
   grid-area: logo;
   position: relative;
   overflow: hidden;
-   z-index: 200;
+  z-index: 200;
   padding: 2rem;
 
   span {
     display: block;
-    font-size: 1rem;
     visibility: hidden;
     font-weight: 500;
+    font-size: var(--fs-500);
   }
 }
