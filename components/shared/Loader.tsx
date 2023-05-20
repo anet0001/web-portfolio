@@ -16,7 +16,6 @@ const Loader: FC<LoaderProps> = ({ showLoader, setShowLoader }) => {
         .from(".progress-bar", {
           autoAlpha: 0,
           duration: 1,
-          delay: 1,
         })
         .to(".progress-bar", {
           delay: 0.5,
@@ -32,10 +31,10 @@ const Loader: FC<LoaderProps> = ({ showLoader, setShowLoader }) => {
             },
             {
               opacity: 0,
-              delay: 0.5,
+              delay: 0.25,
             },
           ],
-          duration: 2.5,
+          duration: 0.8,
           onComplete: () => {
             setShowLoader(false);
           },
@@ -49,7 +48,7 @@ const Loader: FC<LoaderProps> = ({ showLoader, setShowLoader }) => {
     return () => {
       ctx.revert();
     };
-  }, []);
+  }, [setShowLoader]);
 
   return (
     <div className="loader" ref={scope}>

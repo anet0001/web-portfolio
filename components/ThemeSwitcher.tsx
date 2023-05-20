@@ -58,6 +58,7 @@ const ThemeSwitcher: FC<GenericComponent> = ({ showLoader }) => {
           key={index}
           onClick={() => handleThemeSwitch(`${name}`)}
           style={{ "--data-index": index } as MyCustomCSS}
+          aria-label="Theme Switcher"
         />
       ))}
     </div>
