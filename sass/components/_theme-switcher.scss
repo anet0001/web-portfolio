@@ -16,7 +16,7 @@
   cursor: pointer;
 
   @media (max-width: 450px) {
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 1rem 2rem 1rem 2.5rem;
   }
 
   &:hover &__switch {
@@ -42,10 +42,7 @@
 
     @media (max-width: 450px) {
       transform: translateX(0);
-
-      &:not(:first-child) {
-        margin-right: 0.25rem;
-      }
+      margin-left: -0.5rem;
     }
 
     &:hover {
