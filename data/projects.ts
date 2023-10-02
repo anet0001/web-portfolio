@@ -8,7 +8,7 @@ export const projects: Project[] = [
       "My personal portfolio website built with Next.js, TypeScript, SCSS, GSAP,and deployed on Vercel.",
   },
   {
-    name: "*More to come soon.",
+    name: "**new portfolio soon.",
     link: "/",
     description: "",
   },
