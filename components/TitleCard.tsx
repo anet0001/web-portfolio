@@ -4,7 +4,7 @@ import React, { FC, forwardRef, useEffect, useRef } from "react";
 
 const TitleCard: FC<GenericComponent> = ({ showLoader }) => {
   const scope = useRef<HTMLDivElement | null>(null);
-  const title = "Front-end Engineer";
+  const title = "Front-end Developer";
 
   useEffect(() => {
     if (showLoader) return;
