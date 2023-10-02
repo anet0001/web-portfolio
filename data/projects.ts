@@ -8,20 +8,25 @@ export const projects: Project[] = [
       "My personal portfolio website built with Next.js, TypeScript, SCSS, GSAP,and deployed on Vercel.",
   },
   {
-    name: "Rexvirgo Media",
-    link: "https://rexvirgomedia.com",
-    description:
-      "A website for a turkey-based digital design agency built with Next.js, SCSS, Sanity CMS, GSAP and deployed on Vercel.",
-  },
-  {
-    name: "Jasmine College",
-    link: "https://jasminecollege.sch.ng",
-    description: "A website for a college in Nigeria built with React and SCSS",
-  },
-  {
-    name: "Shop Rebellis",
+    name: "More to come soon.",
     link: "/",
-    description:
-      "An e-commerce website built with React, SCSS, Redux,Firebase, and MongoDB.",
+    description: "",
   },
+  // {
+  //   name: "Rexvirgo Media",
+  //   link: "https://rexvirgomedia.com",
+  //   description:
+  //     "A website for a turkey-based digital design agency built with Next.js, SCSS, Sanity CMS, GSAP and deployed on Vercel.",
+  // },
+  // {
+  //   name: "Jasmine College",
+  //   link: "https://jasminecollege.sch.ng",
+  //   description: "A website for a college in Nigeria built with React and SCSS",
+  // },
+  // {
+  //   name: "Shop Rebellis",
+  //   link: "/",
+  //   description:
+  //     "An e-commerce website built with React, SCSS, Redux,Firebase, and MongoDB.",
+  // },
 ];
