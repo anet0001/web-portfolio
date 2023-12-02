@@ -1,15 +1,5 @@
-import Clock from "@/components/Clock";
-import Logo from "@/components/Logo";
-import ProjectList from "@/components/ProjectList";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
-import TitleCard from "@/components/TitleCard";
-import Loader from "@/components/shared/Loader";
-import { gsap } from "gsap";
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
 import localFont from "next/font/local";
-import GridBackground from "@/components/shared/GridBackground";
-import ContactList from "@/components/ContactList";
 
 const CHPublic = localFont({
   src: [
@@ -37,31 +27,6 @@ const CHPublic = localFont({
 });
 
 export default function Home() {
-  const [showLoader, setShowLoader] = useState(true);
-  const [timeline, setTimeline] = useState<gsap.core.Timeline | undefined>();
-  const scope = useRef(null);
-
-  const config = {
-    showLoader,
-  };
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
-      setTimeline(tl);
-    }, scope);
-
-    return () => ctx.revert();
-  }, []);
-
-  useEffect(() => {
-    timeline && timeline.reversed(!showLoader);
-  }, [timeline, showLoader]);
-
-  // useEffect(() => {
-  //   timeline && timeline;
-  // }, [timeline, showLoader]);
-
   return (
     <>
       <Head>
@@ -71,15 +36,37 @@ export default function Home() {
         <meta http-equiv="Cache-control" content="no-cache" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Loader showLoader={showLoader} setShowLoader={setShowLoader} />
-      <main ref={scope} className={`${CHPublic.className}`}>
-        <GridBackground />
-        <Logo {...config} />
-        <ContactList {...config} />
-        <ThemeSwitcher {...config} />
-        <ProjectList {...config} />
-        <TitleCard {...config} />
-        <Clock {...config} />
+      <main
+        className={`${CHPublic.className}`}
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: ".5rem",
+          justifyContent: "center",
+        }}
+      >
+        <div className="row">WEBSITE UNDER CONSTRUCTION :)</div>
+        <div className="row" style={{ display: "flex", gap: "1rem" }}>
+          <a
+            target="_blank"
+            style={{ color: "#343434" }}
+            href="https://github.com/anet0001"
+          >
+            Github
+          </a>
+          <a
+            target="_blank"
+            style={{ color: "#343434" }}
+            href="mailto:nonsoanetoh@gmail"
+          >
+            Email
+          </a>
+        </div>
       </main>
     </>
   );
