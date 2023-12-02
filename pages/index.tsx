@@ -48,6 +48,7 @@ export default function Home() {
           alignItems: "center",
           gap: ".5rem",
           justifyContent: "center",
+          textAlign: "center",
         }}
       >
         <div className="row">WEBSITE UNDER CONSTRUCTION :)</div>
