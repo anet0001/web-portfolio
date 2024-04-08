@@ -54,7 +54,6 @@ export default function Home() {
         className={`${CHPublic.className}`}
         style={{
           padding: "2rem",
-          fontSize: "1.15rem",
           display: "flex",
           flexDirection: "column",
           gap: ".35rem",
@@ -174,6 +173,7 @@ export default function Home() {
               listStyle: "none",
               display: "flex",
               flexDirection: "row",
+              flexWrap: "wrap",
               gap: ".5rem",
               marginTop: "2rem",
             }}
