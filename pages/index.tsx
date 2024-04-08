@@ -54,7 +54,7 @@ export default function Home() {
         className={`${CHPublic.className}`}
         style={{
           padding: "2rem",
-          fontSize: "1.25rem",
+          fontSize: "1.15rem",
           display: "flex",
           flexDirection: "column",
           gap: ".35rem",
