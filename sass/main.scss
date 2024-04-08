@@ -1,4 +1,10 @@
-@import "abstracts/index";
 @import "base/index";
-@import "components/index";
-@import "pages/index";
+
+.feature {
+  margin: 0 1rem;
+}
+
+*::selection {
+  background-color: #1cd760;
+  color: #fff;
+}
