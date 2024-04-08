@@ -182,6 +182,9 @@ export default function Home() {
               <a href="mailto:nonsoanetoh@gmail.com">Email</a>
             </li>
             <li>
+              <a href="https://github.com/anet0001">Github</a>
+            </li>
+            <li>
               <a
                 href="https://www.linkedin.com/in/nonsoanetoh/"
                 target="_blank"
